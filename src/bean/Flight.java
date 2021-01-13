@@ -3,6 +3,7 @@ package bean;
 import java.sql.Date;
 
 public class Flight {
+    private String ID;//然并卵
     private String models;//机型
     private String flightID;//飞机编号
     private int zuoweinum;//当前座位
@@ -12,16 +13,35 @@ public class Flight {
     //private float price;
 
 
+    public Flight(String ID, String models, String flightID, int zuoweinum, String date, String leaveStation, String arriveStation) {
+        this.ID = ID;
+        this.models = models;
+        this.flightID = flightID;
+        this.zuoweinum = zuoweinum;
+        this.date = date;
+        this.leaveStation = leaveStation;
+        this.arriveStation = arriveStation;
+    }
+
     @Override
     public String toString() {
         return "Flight{" +
-                "机型='" + models + '\'' +
-                ", 飞机编号='" + flightID + '\'' +
-                ", 座位数=" + zuoweinum +
-                ", 出发时间='" + date + '\'' +
-                ", 起飞时间='" + leaveStation + '\'' +
-                ", 到达时间='" + arriveStation + '\'' +
+                "ID='" + ID + '\'' +
+                ", models='" + models + '\'' +
+                ", flightID='" + flightID + '\'' +
+                ", zuoweinum=" + zuoweinum +
+                ", date='" + date + '\'' +
+                ", leaveStation='" + leaveStation + '\'' +
+                ", arriveStation='" + arriveStation + '\'' +
                 '}';
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getFlightID() {
@@ -42,14 +62,6 @@ public class Flight {
         this.models = models;
     }
 
-    public Flight(String models, String flightID, int zuoweinum, String date, String leaveStation, String arriveStation) {
-        this.models = models;
-        this.flightID = flightID;
-        this.zuoweinum = zuoweinum;
-        this.date = date;
-        this.leaveStation = leaveStation;
-        this.arriveStation = arriveStation;
-    }
 
     public int getZuoweinum() {
         return zuoweinum;

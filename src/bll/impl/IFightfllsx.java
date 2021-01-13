@@ -2,14 +2,22 @@ package bll.impl;
 
 import bean.Flight;
 import bll.IFightbll;
+import dao.IFlightDao;
+import dao.impl.Flightdao;
 
+import java.sql.SQLException;
 import java.util.Set;
 
 public class IFightfllsx implements IFightbll {
+    IFlightDao iFlightDao;
+
+    public IFightfllsx() {
+        iFlightDao =new Flightdao();
+    }
 
     @Override
-    public void insertFlight(Flight flight) {
-        System.out.println(flight);
+    public void insertFlight(Flight flight) throws SQLException {
+        iFlightDao.insertFlight(flight);
     }
 
     @Override
