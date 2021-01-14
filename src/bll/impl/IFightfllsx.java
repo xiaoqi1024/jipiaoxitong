@@ -22,7 +22,8 @@ public class IFightfllsx implements IFightbll {
 
     @Override
     public Set<Flight> getAllFligts() {
-        return null;
+
+        return iFlightDao.getAllFligts();
     }
 
     @Override
